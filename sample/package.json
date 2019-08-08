@@ -1,0 +1,30 @@
+{
+  "name": "sample",
+  "version": "0.1.10",
+  "description": "Sample switch",
+  "main": "sample.js",
+  "scripts": {
+    "build": "webpack --progress --colors",
+    "test": "test"
+  },
+  "keywords": [
+    "sample",
+    "switch"
+  ],
+  "author": "Erika Perugachi",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.9.0",
+    "react-switch-input": "^0.1.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}

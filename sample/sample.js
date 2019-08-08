@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {Switch} from 'react-switch-input';
+import { Switch } from 'react-switch-input';
 
 class App extends Component {
   constructor(props, context) {
     super(props, context);
-
     this.state = {
       switchExternalDomain: 'Activo',
       switchExternalDomainChecked: false
@@ -35,9 +33,4 @@ class App extends Component {
   };
 }
 
-App.propTypes = {
-  user: PropTypes.object.isRequired,
-  onLoadingModule: PropTypes.func
-};
-
-export default App;
+ReactDOM.render(<App />, document.getElementById('root'));
