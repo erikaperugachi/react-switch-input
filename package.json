@@ -1,6 +1,6 @@
 {
   "name": "react-switch-input",
-  "version": "0.1.10",
+  "version": "1.0.0",
   "description": "Switch input",
   "keywords": [
     "switch",
@@ -13,7 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --colors",
     "clean": "rm -rf dist",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run clean && npm run build",
+    "pack": "npm run clean && npm pack"
   },
   "author": "Erika Perugachi <erikaperugachi@gmail.com>",
   "license": "MIT",

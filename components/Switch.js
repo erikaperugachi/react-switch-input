@@ -43,6 +43,7 @@ class Switch extends Component {
 }
 
 Switch.defaultProps = {
+  name: "switch",
   theme: "one"
 }
 
