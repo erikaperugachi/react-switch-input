@@ -1,0 +1,78 @@
+
+
+@font-face {
+  font-family: "Couture";
+  src:url(./fonts/couture-bld.otf) format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geosans";
+  src:url(./fonts/GeosansLight.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  font-family: Helvetica;
+}
+
+h1, h2{
+  font-family: "Couture";
+}
+
+p, span{
+  font-family: "Geosans";
+}
+
+header{
+  text-align: center;
+}
+
+section{
+  article{
+    display: flex;
+    flex-direction: row;
+
+    > div{
+      width: 50%;
+    }
+
+    pre{
+      width: 50%;
+    }
+  }
+}
+
+code{
+  font-family: monospace;
+  
+  span{
+    font-family: monospace;
+  }
+}
+
+#section-installation{
+  span{
+    margin-right: 10px;
+  }
+}
+
+#article-value{
+  .input-switch{
+    margin-bottom: 10px;
+  }
+}
+
+#article-switches{
+  .input-switch{
+    margin: 10px 0;
+  }
+}
+
+#article-theme{
+  .input-switch{
+    margin: 10px 0;
+  }
+}
