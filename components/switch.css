@@ -3,13 +3,15 @@
 FILE: switch.css
 
 CONTENT
-1.- SWITCH
+1.- CONTENT
   1.1.- ON
   1.2.- OFF
-	
+  1.3.- THEME
+    1.3.1.- ONE
+    1.3.2.- TWO
 */
 
-/* 1.- WRAPPER
+/* 1.- CONTENT
    ----------------------------- */
 .input-switch {
   align-items: center;
@@ -68,13 +70,13 @@ CONTENT
   color: black;
 }
 
-/* 1.1.- WRAPPER: on
+/* 1.1.- CONTENT: on
    ----------------------------- */
 .input-switch input[type="checkbox"]:checked + label + label{
   color: black;
 }
 
-/* 1.2.- WRAPPER: off
+/* 1.2.- CONTENT: off
    ----------------------------- */
 /* background control */
 .input-switch input[type="checkbox"] + label:before {
@@ -104,11 +106,8 @@ CONTENT
   transition: margin 0.4s, background 0.4s;
 }
 
-
-
-
-
-/* style-switch-one */
+/* 1.3.1.- CONTENT: THEME: one
+   ----------------------------- */
 .input-switch.style-switch-one input[type="checkbox"] + label{
   background-color: #c5c3c3;
   width: 38px;
@@ -140,14 +139,15 @@ CONTENT
   margin-left: 23px;
 }
 
-/* style-switch-two */
+/* 1.3.1.- CONTENT: THEME: two
+   ----------------------------- */
 .input-switch.style-switch-two input[type="checkbox"] + label{
-  background-color: #65bdff;
+  background-color: #d2d2d2;
   width: 28px;
 }
 
 .input-switch.style-switch-two input[type="checkbox"] + label:before {
-  background-color: #65bdff;
+  background-color: #d2d2d2;
 }
 
 .input-switch.style-switch-two input[type="checkbox"] + label:after {
