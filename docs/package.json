@@ -1,10 +1,10 @@
 {
   "name": "sample",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sample switch",
   "main": "sample.js",
   "scripts": {
-    "build": "webpack --progress --colors",
+    "start": "webpack --progress --colors",
     "test": "test"
   },
   "keywords": [
@@ -16,7 +16,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.9.0",
-    "react-switch-input": "^1.0.0",
+    "react-switch-input": "^1.1.0",
     "react-syntax-highlighter": "^11.0.2"
   },
   "devDependencies": {

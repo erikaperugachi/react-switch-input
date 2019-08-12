@@ -19,21 +19,65 @@
 }
 
 h1, h2{
+  color: rgb(80, 56, 99);
   font-family: "Couture";
+}
+
+h3{
+  color: rgb(119, 86, 146);
 }
 
 p, span{
   font-family: "Geosans";
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
+
 header{
+  background-color: rgb(244, 234, 255);
+  background-image: url('./images/header.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding-bottom: 15px;
   text-align: center;
+
+  nav{
+    display: flex;
+  
+    a{
+      align-items: center;
+      color: rgb(166, 135, 184);
+      display: flex;
+      font-weight: bold;
+      margin: 15px;
+      text-decoration: none;
+  
+      svg{
+        fill: rgb(166, 135, 184);
+        margin-right: 10px;
+      }
+    }
+  }
+
+  p{
+    color: rgb(60, 60, 60);
+  }
 }
 
 section{
+  h2{
+    text-align: center;
+  }
+
   article{
+    border-top: 1px solid rgb(244, 234, 255);
     display: flex;
     flex-direction: row;
+    padding: 0 20px;
 
     > div{
       width: 50%;
@@ -53,9 +97,91 @@ code{
   }
 }
 
-#section-installation{
+@mixin toogle-item-selected{
+  background-color: rgb(166, 135, 184);
+
   span{
-    margin-right: 10px;
+    color: rgb(253, 200, 255);
+    font-weight: bold;
+  }
+}
+
+#section-installation{
+  display: flex;
+  flex-direction: column;
+
+  .section-toggle{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    &.selected-1{
+      .section-toggle-item{
+        div{
+          &:nth-child(1){
+            @include toogle-item-selected;
+          }
+        }
+      }
+    }
+
+    &.selected-2{
+      .section-toggle-item{
+        div{
+          &:nth-child(2){
+            @include toogle-item-selected;
+          }
+        }
+      }
+    }
+
+    .section-toggle-item{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: -3px;
+
+      div{
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        cursor: pointer;
+        margin-right: 3px;
+        padding: 2px 4px 4px 4px;
+
+        &:hover{
+          @include toogle-item-selected;
+        }
+
+        span{
+          color: rgb(84, 67, 83);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .section-code{
+    margin: 10px auto;
+
+    span{
+      font-size: 12px;
+    }
+  }
+
+  pre{
+    background-color: rgb(166, 135, 184);
+    border-radius: 3px;
+    margin: 0;
+    min-width: 365px;
+    padding: 10px 0;
+    text-align: center;
+    
+
+    code{
+      background-color: rgb(180, 148, 199);
+      color: white;
+      display: block;
+      padding: 0 10px;
+    }
   }
 }
 
