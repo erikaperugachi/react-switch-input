@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Switch } from 'react-switch-input';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { a11yLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { basicSwitch, getValueSwitch, controlSwitch, someSwitches, labelSwitch, disabledSwitch, themeSwitch } from './code';
 import './sample.scss';
+
+const npm = 'npm install react-switch-input';
+const yarn = 'yarn add react-switch-input';
 
 class App extends Component {
   constructor(props) {
@@ -14,17 +17,22 @@ class App extends Component {
       firstChecked: true,
       secondChecked: false,
       lightChecked: true,
-      lightLabel: 'On'
+      lightLabel: 'On',
+      toggleSelected: 1,
+      toggleText: npm
     };
   }
 
   render() {
     return (
       <div>
-        <nav>
-        <svg height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-        </nav>
         <header>
+          <nav>
+            <a href="https://github.com/erikaperugachi/react-switch-input">
+              <svg height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+              <span>View project on GitHub</span>
+            </a>
+          </nav>
           <h1>react-switch-input</h1>
           <p>A simple input switch.<br/>
           Easy to install and set up.<br/>
@@ -34,11 +42,16 @@ class App extends Component {
         <section>
           <div id="section-installation">
             <h2>Installation</h2>
-            <p>
-              <span>NPM</span><code>npm install react-switch-input</code><br/>
-              <span>YARN</span><code>yarn add react-switch-input</code><br/>
-              <span>import</span><code>{"import { Switch } from 'react-switch-input';"}</code>
-            </p>
+            <div className={this.defineToggleSelected()}>
+              <div className="section-toggle-item">
+                <div onClick={(e) => this.handleToggleItem(e, 1)}><span>NPM</span></div>
+                <div onClick={(e) => this.handleToggleItem(e, 2)}><span>YARN</span></div>
+              </div>
+              <pre><code>{this.state.toggleText}</code></pre>
+            </div>
+            <div className={"section-code"}>
+              <span>IMPORT</span><pre><code>{"import { Switch } from 'react-switch-input';"}</code></pre>
+            </div>
           </div>
           <div>
             <h2>How use it?</h2>
@@ -50,7 +63,7 @@ class App extends Component {
                   <Switch/>
                 </div>
               </div>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={a11yLight}>
                 {basicSwitch}
               </SyntaxHighlighter>
             </article>
@@ -66,7 +79,7 @@ class App extends Component {
                   <span>{`Value: ${this.state.basicChecked}`}</span>
                 </div>
               </div>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={a11yLight}>
                 {getValueSwitch}
               </SyntaxHighlighter>
             </article>
@@ -83,7 +96,7 @@ class App extends Component {
                   />
                 </div>
               </div>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={a11yLight}>
                 {controlSwitch}
               </SyntaxHighlighter>
             </article>
@@ -104,7 +117,7 @@ class App extends Component {
                   />
                 </div>
               </div>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={a11yLight}>
                 {someSwitches}
               </SyntaxHighlighter>
             </article>
@@ -120,7 +133,7 @@ class App extends Component {
                     onChange={this.handleChangeSwitch}
                   />
               </div>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={a11yLight}>
                 {labelSwitch}
               </SyntaxHighlighter>
             </article>
@@ -132,7 +145,7 @@ class App extends Component {
                   disabled={true}
                 />
               </div>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={a11yLight}>
                 {disabledSwitch}
               </SyntaxHighlighter>
             </article>
@@ -149,7 +162,7 @@ class App extends Component {
                   theme={"two"}
                 />
               </div>
-              <SyntaxHighlighter language="javascript" style={docco}>
+              <SyntaxHighlighter language="javascript" style={a11yLight}>
                 {themeSwitch}
               </SyntaxHighlighter>
             </article>
@@ -159,11 +172,25 @@ class App extends Component {
     );
   }
 
+  defineToggleSelected = () => {
+    const selected = this.state.toggleSelected;
+    return `section-toggle selected-${selected}`;
+  }
+
   handleChangeSwitch = e => {
     this.setState({
       [`${e.target.name}Label`]: e.target.checked ? 'On' : 'Off',
       [`${e.target.name}Checked`]: e.target.checked
     });
+  }
+
+  handleToggleItem = (e, id) => {
+    e.stopPropagation();
+    const toggleText = id === 1 ? npm : yarn;
+    this.setState({
+      toggleSelected: id,
+      toggleText
+    })
   }
 }
 

@@ -8,6 +8,11 @@ yarn:
 $ yarn add react-switch-input
 ```
 
+## Import
+```javascript
+import { Switch } from 'react-switch-input';
+```
+
 ## Properties
 | Props | Type | Description | Value default |
 | ------ | ------ | ------ | ------ |
